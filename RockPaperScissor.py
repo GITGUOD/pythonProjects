@@ -17,41 +17,50 @@ import time
 
 toPick = ["scissor", "rock", "paper"]
 
+while True:
 
-botPick = random.choice(toPick)
+    botPick = random.choice(toPick)
 
-userPick = input("Choose between Scissor, Rock or Paper \n")
+    userPick = input("Choose between Scissor, Rock or Paper \n")
 
-time.sleep(1)
+    if userPick.casefold() not in toPick.casefold():
+        print("Invalid choice. Please choose Rock, Paper, or Scissor.")
 
-print("Processing...")
+    elif userPick.casefold == "quit":
+        print("Thanks for playing!")
+        break
+    else:
 
-time.sleep(1)
+        time.sleep(1)
 
-print("You picked " + userPick)
+        print("Processing...")
 
-time.sleep(1)
+        time.sleep(1)
 
-print("The bot picked " + botPick)
+        print("You picked " + userPick)
 
-time.sleep(1)
+        time.sleep(1)
 
-print("Processing")
+        print("The bot picked " + botPick)
 
-time.sleep(1)
+        time.sleep(1)
 
-if botPick.casefold() == userPick.casefold():
-    print("Tie, try again")
-else:
-    if botPick.casefold() == "rock" and userPick.casefold() == "scissor":
-        print("You lost")
-    elif botPick.casefold() == "rock" and userPick.casefold() == "paper":
-        print("You Won")
-    elif botPick.casefold() == "scissor" and userPick.casefold() == "paper":
-        print("You Lost")
-    elif botPick.casefold() == "scissor" and userPick.casefold() == "rock":
-        print("You Won")
-    elif botPick.casefold() == "paper" and userPick.casefold() == "scissor":
-        print("You Won")
-    elif botPick.casefold() == "paper" and userPick.casefold() == "rock":
-        print("You Lost")
+        print("Processing")
+
+        time.sleep(1)
+
+        if botPick.casefold() == userPick.casefold():
+            print("Tie, try again")
+        else:
+            if botPick.casefold() == "rock" and userPick.casefold() == "scissor":
+                print("You lost")
+            elif botPick.casefold() == "rock" and userPick.casefold() == "paper":
+                print("You Won")
+            elif botPick.casefold() == "scissor" and userPick.casefold() == "paper":
+                print("You Lost")
+            elif botPick.casefold() == "scissor" and userPick.casefold() == "rock":
+                print("You Won")
+            elif botPick.casefold() == "paper" and userPick.casefold() == "scissor":
+                print("You Won")
+            elif botPick.casefold() == "paper" and userPick.casefold() == "rock":
+                print("You Lost")
