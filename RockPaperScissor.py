@@ -1,4 +1,5 @@
 import random
+import time
 
 #Hur löser vi detta? What's our plan? How do we solve and build this rock-, paper-, scissor-game?
 #We need three objects that is supposed to symbolize scissor, rock and paper
@@ -14,29 +15,43 @@ import random
 #A array to store the string objects
 
 
-toPick = ["Scissor", "Rock", "Paper"]
+toPick = ["scissor", "rock", "paper"]
 
 
 botPick = random.choice(toPick)
 
 userPick = input("Choose between Scissor, Rock or Paper \n")
 
+time.sleep(1)
+
+print("Processing...")
+
+time.sleep(1)
+
 print("You picked " + userPick)
+
+time.sleep(1)
 
 print("The bot picked " + botPick)
 
-if botPick == userPick:
+time.sleep(1)
+
+print("Processing")
+
+time.sleep(1)
+
+if botPick.casefold() == userPick.casefold():
     print("Tie, try again")
 else:
-    if botPick == "Rock" and userPick == "Scissor":
+    if botPick.casefold() == "rock" and userPick.casefold() == "scissor":
         print("You lost")
-    elif botPick == "Rock" and userPick == "Paper":
+    elif botPick.casefold() == "rock" and userPick.casefold() == "paper":
         print("You Won")
-    elif botPick == "Scissor" and userPick == "Paper":
+    elif botPick.casefold() == "scissor" and userPick.casefold() == "paper":
         print("You Lost")
-    elif botPick == "Scissor" and userPick == "Rock":
+    elif botPick.casefold() == "scissor" and userPick.casefold() == "rock":
         print("You Won")
-    elif botPick == "Paper" and userPick == "Scissor":
+    elif botPick.casefold() == "paper" and userPick.casefold() == "scissor":
         print("You Won")
-    elif botPick == "Paper" and userPick == "Rock":
+    elif botPick.casefold() == "paper" and userPick.casefold() == "rock":
         print("You Lost")
