@@ -21,14 +21,15 @@ while True:
 
     botPick = random.choice(toPick)
 
-    userPick = input("Choose between Scissor, Rock or Paper \n")
+    userPick = input("Choose between Scissor, Rock or Paper, or Type 'Quit' to exit the game \n").casefold()
 
-    if userPick.casefold() not in toPick.casefold():
-        print("Invalid choice. Please choose Rock, Paper, or Scissor. Type 'Quit' to exit the game ")
-
-    elif userPick.casefold == "quit":
+    if userPick.casefold() == "quit":
         print("Thanks for playing!")
         break
+
+    if userPick.casefold() not in toPick.casefold():
+        print("Invalid choice. Please choose Rock, Paper, or Scissor. Or Type 'Quit' to exit the game \n")
+
     else:
 
         time.sleep(1)
