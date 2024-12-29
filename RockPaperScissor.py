@@ -24,7 +24,7 @@ while True:
     userPick = input("Choose between Scissor, Rock or Paper \n")
 
     if userPick.casefold() not in toPick.casefold():
-        print("Invalid choice. Please choose Rock, Paper, or Scissor.")
+        print("Invalid choice. Please choose Rock, Paper, or Scissor. Type 'Quit' to exit the game ")
 
     elif userPick.casefold == "quit":
         print("Thanks for playing!")
