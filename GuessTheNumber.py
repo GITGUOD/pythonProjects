@@ -7,8 +7,21 @@
 import random
 import time
 
+#Function or method to safely get integer input
+
+def get_input(type):
+   while True:
+      try:
+         return int(input(type))
+      except ValueError:
+            time.sleep(1)
+            print("Processing...")
+            time.sleep(1)
+            print("Invalid input! Please enter a valid integer.")
+
+
 #Letting the user choose the first number of the interval
-firstInterval = int(input("Select the difficulty by entering the first number of the interval(e.g., '1'): \n"))
+firstInterval = get_input("Select the difficulty by entering the first number of the interval(e.g., '1'): \n")
 
 #Having delays, for quality of life gameplay
 time.sleep(1)
@@ -38,15 +51,18 @@ else:
     #Letting the system determine the random number which you as the user have to guess
     rightNbr = random.randint(firstInterval, secondInterval)
 
+    #Game Loop
+
     while True:
      
-     guessNbr = int(input("Now, guess the right number!"))
+     guessNbr = int(input("Now, guess the right number! \n"))
 
-     if rightNbr >= guessNbr:
-        print("Try again, the number is higher!")
+     if rightNbr > guessNbr:
+        print(f"Try again, the number is higher than {guessNbr}!")
 
-     elif rightNbr <= guessNbr:
-        print("Try again, the number is lower!")
+     elif rightNbr < guessNbr:
+        print(f"Try again, the number is lower {guessNbr}!")
      else:
-        print("You guessed it! You won")
+        print(f"You guessed it! You won, the right number is {guessNbr}.")
+        break
 
