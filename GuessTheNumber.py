@@ -20,49 +20,52 @@ def get_input(type):
             print("Invalid input! Please enter a valid integer.")
 
 
-#Letting the user choose the first number of the interval
-firstInterval = get_input("Select the difficulty by entering the first number of the interval(e.g., '1'): \n")
+while True:
 
-#Having delays, for quality of life gameplay
-time.sleep(1)
 
-print("Processing...")
+   #Letting the user choose the first number of the interval
+   firstInterval = get_input("Select the difficulty by entering the first number of the interval(e.g., '1'): \n")
 
-time.sleep(1)
+   #Having delays, for quality of life gameplay
+   time.sleep(1)
 
-#Letting the user pick the second interval number
-secondInterval = int(input("Now, select the second number of the interval(e.g., '10'): \n"))
+   print("Processing...")
 
-#Having repeatable delays
-time.sleep(1)
+   time.sleep(1)
 
-print("Processing...")
+   #Letting the user pick the second interval number
+   secondInterval = int(input("Now, select the second number of the interval(e.g., '10'): \n"))
 
-time.sleep(1)
+   #Having repeatable delays
+   time.sleep(1)
 
-#Checking for valid range
+   print("Processing...")
 
-if firstInterval >= secondInterval:
-    print("Invalid range, the first number has to be smaller than the second number")
+   time.sleep(1)
 
-else:
-    print("Valid range, time to start the game")
+   #Checking for valid range
 
-    #Letting the system determine the random number which you as the user have to guess
-    rightNbr = random.randint(firstInterval, secondInterval)
+   if firstInterval >= secondInterval:
+      print("Invalid range, the first number has to be smaller than the second number")
 
-    #Game Loop
+   else:
+      print("Valid range, time to start the game")
 
-    while True:
-     
-     guessNbr = int(input("Now, guess the right number! \n"))
+      #Letting the system determine the random number which you as the user have to guess
+      rightNbr = random.randint(firstInterval, secondInterval)
 
-     if rightNbr > guessNbr:
-        print(f"Try again, the number is higher than {guessNbr}!")
+      #Game Loop
 
-     elif rightNbr < guessNbr:
-        print(f"Try again, the number is lower {guessNbr}!")
-     else:
-        print(f"You guessed it! You won, the right number is {guessNbr}.")
-        break
+      while True:
+      
+         guessNbr = int(input("Now, guess the right number! \n"))
+
+         if rightNbr > guessNbr:
+            print(f"Try again, the number is higher than {guessNbr}!")
+
+         elif rightNbr < guessNbr:
+            print(f"Try again, the number is lower {guessNbr}!")
+         else:
+            print(f"You guessed it! You won, the right number is {guessNbr}.")
+            break
 
